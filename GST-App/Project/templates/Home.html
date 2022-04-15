@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        
+
+
+        h3, h1 {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .login-container {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .login-form-1 {
+            padding: 5%;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .login-form-1 h3 {
+            text-align: center;
+            color: #40DFEF;
+        }
+
+        .login-form-2 {
+            padding: 5%;
+            background: #40DFEF;
+            box-shadow: 0 5px 8px 0 rgba(228, 225, 182, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .login-form-2 h3 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .login-container form {
+            padding: 10%;
+        }
+
+        .btnSubmit {
+            width: 50%;
+            padding: 1.5%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-form-1 .btnSubmit {
+            font-weight: 600;
+            color: #000000;
+            background-color: #40DFEF;
+        }
+
+        .login-form-2 .btnSubmit {
+            font-weight: 600;
+            color: #040404;
+            background-color: #fff;
+        }
+
+        .login-form-2 .ForgetPwd {
+            color: rgb(6, 6, 6);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .login-form-1 .ForgetPwd {
+            color: #070707;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        h1{
+            font-weight: 300;
+            color: #001E6C;
+            font-size: 50px;
+            text-shadow: #40DFEF;
+            text-decoration: wavy;
+        }
+
+    </style>
+    <title>GST tax management system</title>
+</head>
+<body>
+
+<div class=" container-fluid login-container">
+    <h1>Welcome to GST Tax System</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="row table-dark">
+        <div class="col-md-6 login-form-1">
+            <h3 class>Login</h3>
+            <form action="http://127.0.0.1:9696/login" method="post">
+                <div class="form-group">
+                    <input type="name" name="name" class="form-control" placeholder="Your Name *" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email *" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Your Password *" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit btn btn-lg btn-primary" value="Login"/>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6 login-form-2">
+            <h3>Create My Account</h3>
+            <form action="http://127.0.0.1:9696/signup" method="post">
+                <div class="form-check">
+                    <div class="form-group">
+                        <input type="name" name="name" class="form-control" placeholder="Your Name *" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email *" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Your Password *"
+                               value=""/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit btn btn-lg btn-primary" value="Create Account"/>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
